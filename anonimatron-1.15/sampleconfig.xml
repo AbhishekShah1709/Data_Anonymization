@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration salt="examplesalt"
+    jdbcurl="jdbc:oracle:thin:@[HOST]:[PORT]:[SID]" userid="userid" password="password">
+    <anonymizerclass>my.demo.java.SmurfAnonymizer</anonymizerclass>
+    <anonymizerclass>org.sf.anonimatron.CommunityAnonymizer</anonymizerclass>
+    <table name="CUSTOM_TYPES_TABLE">
+        <column name="A_ROMAN_NAME_COLUMN" type="ROMAN_NAME" size="-1"/>
+        <column name="A_DUTCHBANKACCOUNT_COLUMN" type="DUTCHBANKACCOUNT" size="-1"/>
+        <column name="A_IBAN_COLUMN" type="IBAN" size="-1"/>
+        <column name="A_DUTCH_ZIP_CODE_COLUMN" type="DUTCH_ZIP_CODE" size="-1"/>
+        <column name="A_PREFETCHCHARACTERS_COLUMN"
+            type="PREFETCHCHARACTERS" size="-1"/>
+        <column name="A_BURGERSERVICENUMMER_COLUMN"
+            type="BURGERSERVICENUMMER" size="-1"/>
+        <column name="A_DATE_COLUMN" type="DATE" size="-1"/>
+        <column name="A_EMAIL_ADDRESS_COLUMN" type="EMAIL_ADDRESS" size="-1"/>
+        <column name="A_STRING_COLUMN" type="STRING" size="-1"/>
+        <column name="A_ELVEN_NAME_COLUMN" type="ELVEN_NAME" size="-1"/>
+        <column name="A_RANDOMDIGITS_COLUMN" type="RANDOMDIGITS" size="-1"/>
+        <column name="A_UUID_COLUMN" type="UUID" size="-1"/>
+        <column name="A_RANDOMCHARACTERS_COLUMN" type="RANDOMCHARACTERS" size="-1"/>
+        <column name="A_COUNTRY_CODE_COLUMN" type="COUNTRY_CODE" size="-1"/>
+        <column name="A_SHORTLIVED_COLUMN" type="STRING" size="-1" shortlived="true"/>
+        <column name="A_PARAMETERIZED_COLUMN" type="RANDOMCHARACTERS" size="-1">
+            <parameter id="characters">ABC123!*&amp;</parameter>
+        </column>
+    </table>
+    <table name="DEFAULT_TYPES_TABLE">
+        <column name="A_JAVA_LANG_STRING_COLUMN" type="java.lang.String" size="-1"/>
+        <column name="A_JAVA_SQL_DATE_COLUMN" type="java.sql.Date" size="-1"/>
+    </table>
+    <table name="DISCRIMINATOR_DEMO_TABLE">
+        <column name="CONTACTINFO" type="RANDOMDIGITS" size="-1"/>
+        <discriminator columnname="CONTACTTYPE" value="email address">
+            <column name="CONTACTINFO" type="EMAIL_ADDRESS" size="-1"/>
+        </discriminator>
+    </table>
+    <file inFile="mydatafile.in.csv"
+        reader="com.rolfje.anonimatron.file.CsvFileReader"
+        outFile="mydatafile.out.csv" writer="com.rolfje.anonimatron.file.CsvFileWriter">
+        <column name="1" type="ROMAN_NAME" size="-1"/>
+        <column name="2" type="DUTCHBANKACCOUNT" size="-1"/>
+        <column name="3" type="IBAN" size="-1"/>
+        <column name="4" type="DUTCH_ZIP_CODE" size="-1"/>
+        <column name="5" type="PREFETCHCHARACTERS" size="-1"/>
+        <column name="6" type="BURGERSERVICENUMMER" size="-1"/>
+        <column name="7" type="DATE" size="-1"/>
+        <column name="8" type="EMAIL_ADDRESS" size="-1"/>
+        <column name="9" type="STRING" size="-1"/>
+        <column name="10" type="ELVEN_NAME" size="-1"/>
+        <column name="11" type="RANDOMDIGITS" size="-1"/>
+        <column name="12" type="UUID" size="-1"/>
+        <column name="13" type="RANDOMCHARACTERS" size="-1"/>
+        <column name="14" type="COUNTRY_CODE" size="-1"/>
+    </file>
+    <file inFile="default_types.in.csv"
+        reader="com.rolfje.anonimatron.file.CsvFileReader"
+        outFile="default_types.out.csv" writer="com.rolfje.anonimatron.file.CsvFileWriter">
+        <column name="A_JAVA_LANG_STRING_COLUMN" type="java.lang.String" size="-1"/>
+        <column name="A_JAVA_SQL_DATE_COLUMN" type="java.sql.Date" size="-1"/>
+    </file>
+    <file inFile="nocolumns.in.csv"
+        reader="com.rolfje.anonimatron.file.CsvFileReader"
+        outFile="nocolumns.out.csv" writer="com.rolfje.anonimatron.file.CsvFileWriter"/>
+</configuration>

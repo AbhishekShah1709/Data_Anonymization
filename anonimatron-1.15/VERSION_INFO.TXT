@@ -1,0 +1,107 @@
+*** Version 1.15
+- Fixed a problem where tables from other catalogs could prevent
+  fetching primary key information from the correct table,
+  fixes issues #105 and #106
+- Updated maven plugin versions
+- Updated several libraries to the latest 1.8 supporting version
+
+*** Version 1.14
+- Fixed a problem where generated Dutch BSN numbers could be
+  syntactically invalid, issue #99
+- Removed references to deprecated Hamcrest matchers in the
+  unittests, issue #94
+- Fixed a problem where RANDOMDIGITS was not downwards compatible
+  and required a digit mask, issue #95
+- Upgraded code to make better use of Java 8 features.
+- Upgraded bundled mysql-connector-j to 8.0.21, also requested in issue #101
+- Solved a problem where UkPostCodeAnonymizer would not set the Synonym
+  type and ignored the "shortlived" synonym configuration.
+- Solved a problem where discriminator configuration was parsed
+  incorrectly, see #86
+
+*** Version 1.13
+- Fixed OutOfMemoryError for tables with BLOBs by adding fetch size,
+  see pull request #83
+- Moved documentation to the Jekyll folder in /docs/documentation
+
+*** Version 1.12
+- Added mask parameter to DigitStringAnonymizer
+  (fixes issue #74, thanks to Balogh Tamás and Bartlomiej Komendarczuk)
+- Added UK Postalcode Anonymizer
+- Optimized Random number generators (less instantiations)
+- Fixed override problem with password, userid and jdbcurl
+  (pull request #69, thanks to Stephan Schrader)
+- Security, performance and readability fixes, as suggested by SonarCube,
+  see https://sonarcloud.io/dashboard?id=realrolfje_anonimatron)
+- Integrated documentation in the main development branch
+
+*** Version 1.11
+- Add numeric BSN support, closes issue #31
+- Ability to provide database connection parameters through
+  the command line, closes issue #53
+- Ability to pass parameters to Anonymizers through the
+  column configuration. Closes issue #54
+- Bumped up the versions of some maven plugins and dependencies
+  thanks to dependabot.
+
+*** Version 1.10.1
+- Implements (rudamentary) support for MSSQL Schemas
+
+*** Version 1.10
+- Warning: Breaks code which relies on 1.9.3 and earlier as a library.
+- New feature: Short lived synonyms. These values are not stored,
+  and not consistent between runs. Used to fill unimportant fields
+  and reduce the number of stored synonyms. Use with care.
+
+*** Version 1.9.3
+- Anonimatron now available as library in maven central, see
+  https://search.maven.org/search?q=g:com.rolfje.anonimatron
+
+*** Version 1.9.2
+- New Synonym: HashedSynonym, where the "from" is hashed so that your
+  synonym file no longer contains source data.
+
+*** Version 1.9
+- New feature: Anonymize files.
+- Bumped to Java 1.7
+- Implemented suggestions, bugfixes and improvements.
+
+*** Version 1.8
+- Moved to Github
+- Added release scripts
+- Changed versioning to support the new release scripts
+- Added SyBase drivers
+
+*** Version 1.7
+- Implemented "Dryrun", feature request #3.
+  There is now a new command line option "-dryrun" which will make
+  Anonimatron go through all it's paces, but without any writes to your
+  database. It will even create a synonym file if you want to.
+
+- Implemented "Prefetching", feature request #5.
+  If your Anonymizer implements the "Prefetcher" interface, Anonimatron will
+  make a pass through the table and feed every value for your column to your
+  Anonymizer. This will enable you to collect the characters used in the
+  source data, so you can base your generated Synonyms on that. Any strange
+  UTF-8 character in your source database can be in your output set now,
+  while still being Anonymized. 
+
+- Added "CharacterStringPrefetchAnonymizer" for feature #5.
+
+- Added "Base64StringFieldHandler" to handle writing binary data from and
+  to the Synonym XML file.
+
+- Changed the update strategy, Anonimatron now uses a cursor to go through
+  a resultset, instead of generating update statements.
+
+- Reduced memory usage and improved performance.  
+
+*** Version 1.6 (and earlier)
+The original Anonimatron versions 1.0 to 1.6 were released in rapid
+succession. New features and bugfixes were rapidly implemented to support
+some people who started using Anonimatron on production systems. This
+usage made Anonimatron what it is today:
+- 5 Star rating on Sourceforge
+- Featured on Softpedia
+
+  

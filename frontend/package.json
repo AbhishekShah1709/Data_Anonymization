@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-bootstrap-validation": "^0.1.11",
+    "react-toast-notifications": "^2.5.1"
+  }
+}

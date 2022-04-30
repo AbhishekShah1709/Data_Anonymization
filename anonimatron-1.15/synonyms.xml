@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonyms>
+    <string type="ROMAN_NAME" from="Q2hhcmxlcw==" to="RGliaWJpZnJpZ3ViZW51cw=="/>
+    <string type="ROMAN_NAME" from="QW50dXM=" to="RHViaWNpbw=="/>
+    <string type="ROMAN_NAME" from="RXVib3Rvcg==" to="QWxmcmliaWN1cw=="/>
+    <string type="ROMAN_NAME" from="TWFyZ2U=" to="QmlkYW51bGF1dG9y"/>
+    <string type="ROMAN_NAME" from="RGliaWJpZnJpZ3ViZW51cw==" to="RG9idWJlY3Vz"/>
+    <string type="ROMAN_NAME" from="SG9tZXI=" to="RXVib3Rvcg=="/>
+    <string type="ROMAN_NAME" from="QmlkYW51bGF1dG9y" to="RGlidWJpbHVz"/>
+    <string type="ROMAN_NAME" from="TmVk" to="QW50dXM="/>
+    <string type="ELVEN_NAME" from="RmxhbmRlcnM=" to="QW1hZHJpbXNhbm1haGxpYW4="/>
+    <string type="ELVEN_NAME" from="Q2FlbHRlbmR1bG5lcw==" to="R2FydGhpZHJldGhpbWFodGVu"/>
+    <string type="ELVEN_NAME" from="QW1hZHJpbXNhbm1haGxpYW4=" to="R2lsYWVoYWxyYW4="/>
+    <string type="ELVEN_NAME" from="QnVybnM=" to="U3VtZWFuaWF0ZHVscmlhZGV0aA=="/>
+    <string type="ELVEN_NAME" from="U3VtZWFuaWF0ZHVscmlhZGV0aA==" to="SHVkcmltYWVsdGVudGVuZWw="/>
+    <string type="ELVEN_NAME" from="U2ltcHNvbg==" to="Q2FlbHRlbmR1bG5lcw=="/>
+    <string type="RANDOMDIGITS" from="NjQyMQ==" to="OTM4MA=="/>
+    <string type="RANDOMDIGITS" from="MTIzNA==" to="MTI3Mg=="/>
+    <string type="RANDOMDIGITS" from="MzQ1Ng==" to="NjQyMQ=="/>
+    <string type="RANDOMDIGITS" from="NTY3OA==" to="Nzc0Nw=="/>
+    <string type="RANDOMDIGITS" from="Nzc0Nw==" to="MzcxNQ=="/>
+    <string type="RANDOMDIGITS" from="MTI3Mg==" to="NjIwMw=="/>
+</synonyms>
